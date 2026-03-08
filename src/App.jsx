@@ -437,27 +437,29 @@ function Briefing() {
               Deixe nossa engenharia avaliar o risco do seu ativo. Preencha seus dados e nossa equipe entrará em contato para apresentar a plataforma Kira Vision e desenhar a proposta ideal.
             </p>
 
-            <form className="glass-card bg-white p-8 max-w-lg shadow-xl relative z-20">
+            <form action="https://formsubmit.co/rodrigo.abrao@kiravision.com.br" method="POST" className="glass-card bg-white p-8 max-w-lg shadow-xl relative z-20">
+              <input type="hidden" name="_subject" value="Novo Lead Kira Energia - Briefing Técnico!" />
+              <input type="hidden" name="_captcha" value="false" />
               <div className="grid gap-5">
                 <div>
                   <label className="block text-sm font-bold text-dark-text mb-2">Nome Completo</label>
-                  <input type="text" className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Ex: João Silva" />
+                  <input type="text" name="Nome" required className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Ex: João Silva" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-dark-text mb-2">E-mail Corporativo</label>
-                  <input type="email" className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="joao@empresa.com.br" />
+                  <input type="email" name="Email" required className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="joao@empresa.com.br" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-dark-text mb-2">Potência da Usina (MWp)</label>
-                  <input type="text" className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Ex: 50 MWp" />
+                  <input type="text" name="Potência" required className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Ex: 50 MWp" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-dark-text mb-2">Fale mais sobre sua necessidade (Opcional)</label>
-                  <textarea rows="3" className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Ex: Precisamos de laudo IEC para troca em garantia de 5 mil módulos..."></textarea>
+                  <textarea rows="3" name="Necessidade" className="w-full bg-[var(--color-surface-alt)] border border-[rgba(14,30,52,0.1)] rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Ex: Precisamos de laudo IEC para troca em garantia de 5 mil módulos..."></textarea>
                 </div>
                 <div className="flex flex-col gap-3 mt-2">
-                  <button type="button" className="btn btn-primary w-full">Enviar Solicitação</button>
-                  <a href="https://wa.me/5531999999999" target="_blank" rel="noopener noreferrer" className="btn bg-[#25D366] text-white w-full flex items-center justify-center gap-2 hover:bg-[#128C7E] border-none">
+                  <button type="submit" className="btn btn-primary w-full">Enviar Solicitação</button>
+                  <a href="https://wa.me/5531999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20inspe%C3%A7%C3%A3o%20termogr%C3%A1fica%20da%20Kira%20Energia." target="_blank" rel="noopener noreferrer" className="btn bg-[#25D366] text-white w-full flex items-center justify-center gap-2 hover:bg-[#128C7E] border-none">
                     <MessageCircle className="w-5 h-5" /> Falar no WhatsApp
                   </a>
                 </div>
@@ -511,8 +513,10 @@ function Footer() {
         </div>
       </div>
       
-      <div className="container text-center text-xs opacity-50">
-        &copy; {new Date().getFullYear()} Kira Engenharia. Todos os direitos reservados.
+      <div className="container text-center text-xs opacity-50 flex flex-col gap-2">
+        <p>KIRA ENGENHARIA | CNPJ: 34.154.045/0001-32 | Registro CREA-MG: 0001529773</p>
+        <p>O engenheiro responsável é associado e conselheiro da ABINVI - ASSOCIAÇÃO BRASILEIRA DOS INVESTIGADORES DE INCÊNDIO</p>
+        <p className="mt-4">&copy; {new Date().getFullYear()} Kira Engenharia. Todos os direitos reservados.</p>
       </div>
     </footer>
   );
