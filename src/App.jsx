@@ -462,7 +462,7 @@ function Briefing() {
                 </div>
                 <div className="flex flex-col gap-3 mt-2">
                   <button type="submit" className="btn btn-primary w-full">Enviar Solicitação</button>
-                  <a href="https://wa.me/5531999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20inspe%C3%A7%C3%A3o%20termogr%C3%A1fica%20da%20Kira%20Energia." target="_blank" rel="noopener noreferrer" className="btn bg-[#25D366] text-white w-full flex items-center justify-center gap-2 hover:bg-[#128C7E] border-none">
+                  <a href="https://wa.me/553288560100?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20inspe%C3%A7%C3%A3o%20termogr%C3%A1fica%20da%20Kira%20Energia." target="_blank" rel="noopener noreferrer" className="btn bg-[#25D366] text-white w-full flex items-center justify-center gap-2 hover:bg-[#128C7E] border-none">
                     <MessageCircle className="w-5 h-5" /> Falar no WhatsApp
                   </a>
                 </div>
