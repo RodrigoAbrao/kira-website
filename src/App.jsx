@@ -22,7 +22,7 @@ function Navbar() {
       <header className={`pointer-events-auto rounded-full transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-[14px] shadow-sm border border-[rgba(14,30,52,0.08)] py-3 px-6' : 'bg-transparent py-4 px-2'}`}>
         <div className="flex items-center gap-8">
           <a href="#" className="flex items-center">
-            <img src="/assets/logo-kira-h1-1.png" alt="Kira Engenharia" className="h-[28px] w-auto transition-transform hover:scale-105" />
+            <img src="/assets/logo-kira-h1-1.png" alt="Kira Engenharia" className="h-[40px] w-auto transition-transform hover:scale-105" />
           </a>
           <nav className={`hidden md:flex items-center gap-6 text-[0.95rem] font-medium transition-colors ${scrolled ? 'text-soft-text' : 'text-white/80'}`}>
             <a href="#solucao" className="hover:text-primary transition-colors">Solução</a>
@@ -66,9 +66,12 @@ function Hero() {
 
       <div className="container relative z-10 w-full pl-4 md:pl-12">
         <div className="max-w-[800px]">
-          <span className="hero-anim text-accent font-bold tracking-widest uppercase text-sm mb-6 block">Kira Engenharia • Inspeção Aérea</span>
+          <div className="hero-anim mb-8">
+            <img src="/assets/logo-kira-v1-1.png" alt="Kira Engenharia" className="h-[120px] md:h-[180px] w-auto opacity-90" />
+          </div>
+          <span className="hero-anim text-accent font-bold tracking-widest uppercase text-sm mb-6 block">Inspeção Aérea</span>
           
-          <h1 className="hero-anim text-white leading-[0.9] flex flex-col items-start">
+          <h1 className="hero-anim text-white leading-[0.9] flex flex-col items-start mt-2">
             <span className="font-sans font-bold text-[clamp(2.5rem,4vw,4rem)] tracking-tight">Mapeie o risco real da</span>
             <span className="font-serif italic text-[clamp(4.5rem,8vw,8.5rem)] text-primary font-normal translate-x-[-4px]">operação.</span>
           </h1>
@@ -489,7 +492,7 @@ function Footer() {
     <footer className="bg-[#030811] text-[#ecf3ff]/60 pt-20 pb-10">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 border-b border-white/10 pb-16">
         <div>
-          <img src="/assets/logo-kira-v1-1.png" alt="Kira Engenharia" className="h-[48px] w-auto mb-6 opacity-80" />
+          <img src="/assets/logo-kira-v1-1.png" alt="Kira Engenharia" className="h-[80px] w-auto mb-6 opacity-90" />
           <p className="text-sm max-w-[280px]">Engenharia Termográfica de precisão. Insight • Inovação • Organização • Minimalismo</p>
         </div>
         
