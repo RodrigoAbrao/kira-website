@@ -454,7 +454,7 @@ function Briefing() {
               Deixe nossa engenharia avaliar o risco do seu ativo. Preencha seus dados e nossa equipe entrará em contato para apresentar a plataforma Kira Vision e desenhar a proposta ideal.
             </p>
 
-            <form action="https://formsubmit.co/rodrigo.abrao@kiravision.com.br" method="POST" className="glass-card bg-white p-8 max-w-lg shadow-xl relative z-20">
+            <form action="https://formsubmit.co/rodrigo.abrao@kiraenergia.com.br" method="POST" className="glass-card bg-white p-8 max-w-lg shadow-xl relative z-20">
               <input type="hidden" name="_subject" value="Novo Lead Kira Energia - Briefing Técnico!" />
               <input type="hidden" name="_captcha" value="false" />
               <div className="grid gap-5">
@@ -520,8 +520,8 @@ function Footer() {
         
         <div className="flex flex-col gap-4">
           <strong className="text-white">Contato</strong>
-          <span>rodrigo.abrao@kiravision.com.br</span>
-          <span>kiravision.com.br</span>
+          <span>rodrigo.abrao@kiraenergia.com.br</span>
+          <span>kiraenergia.com.br</span>
           
           <div className="mt-6 flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/10 w-fit">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
