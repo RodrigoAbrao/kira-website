@@ -67,8 +67,8 @@ function Hero() {
       <div className="container relative z-10 w-full pl-4 md:pl-12">
         <div className="max-w-[800px]">
           <h1 className="hero-anim text-white leading-[0.9] flex flex-col items-start mt-2">
-            <div className="flex flex-wrap items-center gap-4 mb-2">
-              <span className="font-sans font-bold text-[clamp(2.5rem,4vw,4rem)] tracking-tight">Mapeie o risco real da</span>
+            <div className="flex flex-row items-center gap-4 mb-2">
+              <span className="font-sans font-bold text-[clamp(2.5rem,4vw,4rem)] tracking-tight whitespace-nowrap">Mapeie o risco real da</span>
               <img src="/assets/logo-kira-h1-1.png" alt="Kira Engenharia" className="h-[40px] md:h-[60px] w-auto opacity-90" />
             </div>
             <span className="font-serif italic text-[clamp(4.5rem,8vw,8.5rem)] text-primary font-normal translate-x-[-4px]">operação.</span>
