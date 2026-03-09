@@ -274,13 +274,13 @@ function Protocol() {
         if (i === cards.length - 1) return; // don't animate the last card out
         
         gsap.to(card, {
-          scale: 0.9,
+          scale: 0.95,
           opacity: 0.5,
-          filter: 'blur(10px)',
+          filter: 'blur(8px)',
           scrollTrigger: {
             trigger: cards[i + 1],
-            start: 'top bottom',
-            end: 'top top',
+            start: 'top 60%',
+            end: 'top 20%',
             scrub: true,
           }
         });
@@ -307,7 +307,7 @@ function Protocol() {
 
         <div className="max-w-4xl mx-auto relative">
           {steps.map((step, i) => (
-            <article key={i} className="sticky-card sticky top-[20vh] w-full min-h-[40vh] mb-[15vh] glass-card bg-white/95 p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 rounded-[var(--radius-lg)] shadow-[0_30px_60px_rgba(7,17,31,0.06)] border border-[var(--color-border)] transform-origin-top">
+            <article key={i} className="sticky-card sticky top-[20vh] w-full min-h-[40vh] mb-[15vh] glass-card bg-white/95 p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 rounded-[var(--radius-lg)] shadow-[0_30px_60px_rgba(7,17,31,0.06)] border border-[var(--color-border)] transform-origin-top hover:z-50 transition-colors duration-500">
               
               <div className="flex-1">
                 <span className="font-mono text-primary font-bold text-lg mb-4 block">PASSO {step.num}</span>
@@ -315,30 +315,44 @@ function Protocol() {
                 <p className="text-soft-text text-lg leading-relaxed">{step.desc}</p>
               </div>
 
-              <div className="w-[180px] h-[180px] md:w-[240px] md:h-[240px] flex-shrink-0 bg-[var(--color-surface-alt)] rounded-[var(--radius-md)] flex items-center justify-center overflow-hidden border border-[var(--color-border)] relative">
-                {i === 0 && (
-                  <img src="/assets/chrome_tfhd4oGKKy.png" alt="Mapeamento Base" className="w-full h-full object-cover object-center mix-blend-multiply opacity-90" />
+              <div className="group/img w-[180px] h-[180px] md:w-[240px] md:h-[240px] flex-shrink-0 bg-[var(--color-surface-alt)] rounded-[var(--radius-md)] flex items-center justify-center relative z-10 hover:z-50 transition-all duration-700 cursor-crosshair">
+                
+                {/* Cinematic Expand on Hover Overlay */}
+                {i !== 1 && (
+                   <div className="absolute inset-0 w-full h-full z-20 pointer-events-none opacity-0 group-hover/img:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex items-center justify-center backdrop-blur-md bg-black/60 rounded-[var(--radius-md)] group-hover/img:scale-[2.5] md:group-hover/img:scale-[3] shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-white/10">
+                      {i === 0 && <img src="/assets/chrome_tfhd4oGKKy.png" alt="Mapeamento Base" className="w-[95%] h-[95%] object-contain rounded-lg drop-shadow-2xl" />}
+                      {i === 2 && <img src="/assets/chrome_mWFXiOCFhs.png" alt="Kira Vision Panorama" className="w-[95%] h-[95%] object-contain rounded-lg drop-shadow-2xl" />}
+                      {i === 3 && <img src="/assets/chrome_y9qfpsPiXS.png" alt="Inspeção Térmica" className="w-[95%] h-[95%] object-contain rounded-lg drop-shadow-2xl" />}
+                      {i === 4 && <img src="/assets/5rpAV2Z2Yp.png" alt="Report em PDF" className="w-[95%] h-[95%] object-contain rounded-lg drop-shadow-2xl" />}
+                   </div>
                 )}
-                {i === 1 && (
-                  <div className="w-full h-full relative bg-[#07111f]">
-                     <div className="absolute top-0 bottom-0 left-0 w-full overflow-hidden">
-                       <div className="w-[200%] h-px bg-accent absolute top-1/2 -translate-y-1/2 animate-[pulse_1s_infinite]"></div>
-                       <svg className="absolute w-full h-full bottom-0 opacity-30 text-primary" viewBox="0 0 100 100" preserveAspectRatio="none">
-                         <path d="M0,50 Q25,20 50,50 T100,50 L100,100 L0,100 Z" fill="currentColor"></path>
-                       </svg>
-                       <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(0,210,232,0.2)_50%,transparent_100%)] animate-[scan_2s_linear_infinite]"></div>
-                     </div>
-                  </div>
-                )}
-                {i === 2 && (
-                  <img src="/assets/chrome_mWFXiOCFhs.png" alt="Kira Vision Panorama" className="w-full h-full object-cover object-center mix-blend-multiply opacity-90 hover:scale-105 transition-transform duration-700" />
-                )}
-                {i === 3 && (
-                  <img src="/assets/chrome_y9qfpsPiXS.png" alt="Inspeção Térmica" className="w-full h-full object-cover object-center mix-blend-multiply opacity-90 hover:scale-105 transition-transform duration-700" />
-                )}
-                {i === 4 && (
-                  <img src="/assets/5rpAV2Z2Yp.png" alt="Report em PDF" className="w-full h-full object-cover object-left-top mix-blend-multiply opacity-90 hover:scale-105 transition-transform duration-700" />
-                )}
+
+                {/* Base Thumbnail View with overflow hidden */}
+                <div className="w-full h-full overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border)] relative">
+                  {i === 0 && (
+                    <img src="/assets/chrome_tfhd4oGKKy.png" alt="Mapeamento Base" className="w-full h-full object-cover object-center mix-blend-multiply opacity-90 group-hover/img:scale-110 transition-transform duration-700" />
+                  )}
+                  {i === 1 && (
+                    <div className="w-full h-full relative bg-[#07111f]">
+                      <div className="absolute top-0 bottom-0 left-0 w-full overflow-hidden">
+                        <div className="w-[200%] h-px bg-accent absolute top-1/2 -translate-y-1/2 animate-[pulse_1s_infinite]"></div>
+                        <svg className="absolute w-full h-full bottom-0 opacity-30 text-primary" viewBox="0 0 100 100" preserveAspectRatio="none">
+                          <path d="M0,50 Q25,20 50,50 T100,50 L100,100 L0,100 Z" fill="currentColor"></path>
+                        </svg>
+                        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(0,210,232,0.2)_50%,transparent_100%)] animate-[scan_2s_linear_infinite]"></div>
+                      </div>
+                    </div>
+                  )}
+                  {i === 2 && (
+                    <img src="/assets/chrome_mWFXiOCFhs.png" alt="Kira Vision Panorama" className="w-full h-full object-cover object-center mix-blend-multiply opacity-90 group-hover/img:scale-110 transition-transform duration-700" />
+                  )}
+                  {i === 3 && (
+                    <img src="/assets/chrome_y9qfpsPiXS.png" alt="Inspeção Térmica" className="w-full h-full object-cover object-center mix-blend-multiply opacity-90 group-hover/img:scale-110 transition-transform duration-700" />
+                  )}
+                  {i === 4 && (
+                    <img src="/assets/5rpAV2Z2Yp.png" alt="Report em PDF" className="w-full h-full object-cover object-left-top mix-blend-multiply opacity-90 group-hover/img:scale-110 transition-transform duration-700" />
+                  )}
+                </div>
               </div>
 
             </article>
